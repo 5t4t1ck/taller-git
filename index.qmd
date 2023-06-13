@@ -35,6 +35,8 @@ editor_options:
 
 ![](images/WhatsApp%20Image%202023-06-12%20at%2012.14.51.jpg){fig-align="center" width="600"}
 
+![](images/frame.png){fig-align="center"}
+
 ## Objetivo General
 
 ![](images/th-3152305922.jpg){fig-align="center"}
