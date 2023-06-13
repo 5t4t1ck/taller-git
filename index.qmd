@@ -1,0 +1,297 @@
+---
+title: "Taller de Git"
+subtitle: ""
+date: "today"
+author: "Lcdo. Diego Medardo Saavedra García. Mgtr"
+lang: "es"
+format:
+  revealjs:
+    toc: false
+    incremental: false
+    slide-number: true
+    preview-links: auto
+    logo: img/logo.png
+    footer: <https://unl.edu.ec/>
+    theme: dark
+    makeindex: true
+    multiplex: true
+    transition: fade
+    chalkboard: true #Pizarra
+    auto-stretch: false
+    smaller: false
+    scrollable: true
+    #presentation-title-slide-text-alig: left
+    presentation-slide-text-align: center
+    menu: true
+    codeBlock: {data-trim: true}
+    execute: true
+    executeCode: true
+    
+bibliography: Bibliografia.bib
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
+editor_options: 
+  chunk_output_type: console
+---
+
+![](images/WhatsApp%20Image%202023-06-12%20at%2012.14.51.jpg){fig-align="center" width="600"}
+
+## Objetivo General
+
+![](images/th-3152305922.jpg){fig-align="center"}
+
+-   El objetivo general de este taller es proporcionar a los participantes los conocimientos y habilidades necesarios para utilizar **Git** como una **herramienta colaborativa** efectiva en el **desarrollo de proyectos de aplicaciones web**.
+
+## Objetivos Específicos
+
+![](img/objetivos%20espec%C3%ADficos.avif){fig-align="center" width="400"}
+
+-   Comprender los conceptos básicos de Git, repositorio, commits, ramas y fusiones.
+
+-   Aprender a crear y gestionar repositorios locales y remotos en Git.
+
+-   Dominar las funcionalidades de ramificación y fusión en Git para facilitar el trabajo en equipo y el desarrollo paralelo.
+
+-   Familiarizarse con la resolución de conflictos en Git y aplicar estrategias efectivas para resolverlos.
+
+-   Explorar características avanzadas de Git, como etiquetas, anotaciones y comandos adicionales que mejoran el flujo de trabajo.
+
+## Introducción a Git
+
+### ¿Qué es Git?
+
+::: {style="position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;"}
+<iframe sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen="true" allowtransparency="true" frameborder="0" height="315" src="https://www.mentimeter.com/app/presentation/alquk2s456bhnxhbw16973xna47gwsey/embed" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" width="420">
+
+</iframe>
+:::
+
+¡Bienvenidos al taller de [Git](https://git-scm.com/) como herramienta colaborativa en el desarrollo de proyectos de aplicaciones web!
+
+En esta sesión, exploraremos cómo [Git](,), un sistema de control de versiones distribuido, puede mejorar la eficiencia y colaboración en el desarrollo de aplicaciones web.
+
+-   **Control de versiones:** [Git](https://git-scm.com/) permite realizar un seguimiento de los cambios en los archivos a lo largo del tiempo, lo que facilita la gestión de versiones y la recuperación de versiones anteriores.
+
+-   **Trabajo en equipo:** [Git](https://git-scm.com/) proporciona funcionalidades que permiten a los desarrolladores colaborar de manera efectiva en un proyecto, como la gestión de ramas y la resolución de conflictos.
+
+-   **Integración con herramientas de desarrollo:** [Git](https://git-scm.com/) se integra con diversas herramientas y plataformas utilizadas en el desarrollo de aplicaciones web, como [GitHub](https://github.com/), [GitLab](https://gitlab.com) o [Bitbucket](https://bitbucket.org/).
+
+![](images/progit2.png){fig-align="center" width="400"}
+
+## **Instalación y configuración inicial de Git.**
+
+-   Pasos para instalar Git en diferentes sistemas operativos y configuración inicial del entorno de trabajo.
+
+### **Conceptos básicos de Git.**
+
+-   **Repositorios:** Creación y gestión de repositorios locales y remotos.
+
+-   **Commits:** Registro de cambios en el repositorio.
+
+-   **Ramas:** Creación y gestión de ramas para el desarrollo paralelo y organización del trabajo.
+
+-   **Fusiones:** Integración de cambios de una rama a otra.
+
+## Trabajo colaborativo con Git
+
+En esta unidad, exploraremos cómo Git facilita el trabajo colaborativo en equipo en el desarrollo de proyectos de aplicaciones web. Aprenderemos a clonar repositorios, colaborar con otros miembros del equipo y sincronizar los cambios realizados.
+
+### Colaboración en equipo con Git: clonar, colaborar y sincronizar repositorios.
+
+-   Clonar un repositorio remoto y trabajar de manera colaborativa en el mismo.
+
+-   Compartir cambios mediante la colaboración en ramas y la creación de solicitudes de extracción.
+
+-   Sincronizar cambios realizados por otros miembros del equipo mediante la actualización del repositorio local.
+
+### Resolución de conflictos en Git.
+
+-   Identificar y resolver conflictos que puedan surgir al fusionar ramas o al trabajar de manera colaborativa en el mismo archivo.
+
+-   Utilizar herramientas de Git para resolver conflictos de manera efectiva y mantener la integridad del proyecto.
+
+### Prácticas recomendadas para evitar conflictos.
+
+-   Mejores prácticas para organizar el trabajo en equipo, minimizar conflictos y garantizar una colaboración fluida.
+
+-   Utilización de ramas separadas para desarrollar nuevas funcionalidades y realizar cambios significativos.
+
+## Funcionalidades avanzadas de Git
+
+En esta última unidad del taller, exploraremos algunas funcionalidades avanzadas de Git que pueden mejorar el flujo de trabajo en el desarrollo de proyectos de aplicaciones web.
+
+Aprenderemos sobre el uso de etiquetas, anotaciones y comandos adicionales para optimizar el proceso de desarrollo.
+
+### Etiquetas y anotaciones en Git.
+
+-   Creación y utilización de etiquetas para marcar versiones importantes del proyecto.
+
+-   Agregar anotaciones detalladas a confirmaciones para proporcionar información adicional sobre los cambios realizados.
+
+-   Uso de comandos adicionales para mejorar el flujo de trabajo.
+
+    -   Explorar comandos como stash, rebase y cherry-pick para realizar tareas específicas en el proceso de desarrollo.
+
+    -   Comprender cómo utilizar estas funcionalidades para gestionar de manera más eficiente el código y las ramas.
+
+### Optimización del proceso de desarrollo web con Git.
+
+-   Identificar prácticas y estrategias para mejorar la eficiencia y productividad en el desarrollo web utilizando Git.
+
+-   Automatizar tareas repetitivas, aprovechar herramientas de integración continua y establecer flujos de trabajo eficientes.
+
+# Ejemplo Práctico.
+
+## **Implementación en Backend (equipo 1):**
+
+### Configuración del entorno:
+
+``` bash
+mkdir proyecto-backend
+cd proyecto-backend
+npm init
+```
+
+### Configuración de Express:
+
+``` javascript
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.get('/', (req, res) => {
+  res.send('Hola desde el servidor Express!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor Express escuchando en el puerto ${PORT}`);
+});
+```
+
+### Conexión a la base de datos:
+
+``` javascript
+const mongoose = require('mongoose');
+const MONGODB_URI = 'mongodb://localhost:27017/mi-base-de-datos';
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Conexión exitosa a la base de datos');
+  })
+  .catch((error) => {
+    console.error('Error al conectar a la base de datos:', error);
+  });
+```
+
+### Creación de API RESTful:
+
+``` javascript
+const express = require('express');
+const router = express.Router();
+const Item = require('../models/Item');
+
+// Obtener todos los items
+router.get('/items', (req, res) => {
+  Item.find()
+    .then((items) => {
+      res.json(items);
+    })
+    .catch((error) => {
+      res.status(500).json({ error: 'Error al obtener los items' });
+    });
+});
+
+// Crear un nuevo item
+router.post('/items', (req, res) => {
+  const newItem = new Item({
+    name: req.body.name,
+    description: req.body.description,
+  });
+
+  newItem.save()
+    .then((item) => {
+      res.json(item);
+    })
+    .catch((error) => {
+      res.status(500).json({ error: 'Error al crear el item' });
+    });
+});
+
+module.exports = router;
+```
+
+## Implementación en Frontend (equipo 2):
+
+### Configuración del entorno:
+
+``` bash
+npx create-react-app proyecto-frontend
+cd proyecto-frontend
+```
+
+### Creación de componentes React:
+
+```         
+jsx
+```
+
+```         
+import React from 'react';  function App() {   return (     <div>       <h1>Hola desde React!</h1>     </div>   ); }  export default App; 
+```
+
+### Implementación de lógica y interacciones:
+
+``` javascriptreact
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <h1>Hola desde React!</h1>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### Implementación de la lógica e interacciones
+
+``` javascriptreact
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <h2>Contador: {count}</h2>
+      <button onClick={increment}>Incrementar</button>
+      <button onClick={decrement}>Decrementar</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+**Fusión de ambos equipos:** En este punto, debes fusionar el código del Backend y el Frontend en una sola estructura de proyecto y asegurarte de que se comuniquen adecuadamente. Esto puede variar dependiendo de cómo hayas organizado tu proyecto y las herramientas utilizadas.
+
+## Conclusiones:
+
+**Mayor eficiencia en el desarrollo colaborativo:** Los participantes han experimentado cómo Git facilita la colaboración en equipo, permitiendo clonar, colaborar y sincronizar repositorios de manera eficiente. Han aprendido a trabajar en paralelo, fusionar cambios y resolver conflictos, lo que mejora la productividad y la calidad del desarrollo.
+
+**Mejor control de versiones:** Gracias a los conocimientos adquiridos, los participantes han aprendido a utilizar Git para registrar y controlar los cambios en el código fuente. Han comprendido la importancia de las ramas y las etiquetas para organizar el flujo de trabajo y marcar versiones importantes, lo que proporciona un mejor control y trazabilidad del desarrollo del proyecto.
+
+**Gestión efectiva de conflictos:** Mediante la práctica de la resolución de conflictos en Git, los participantes han desarrollado habilidades para identificar y resolver problemas que pueden surgir al trabajar en equipo. Han aprendido a utilizar las herramientas proporcionadas por Git para reconciliar cambios contradictorios, lo que mejora la colaboración y la coherencia del proyecto.
+
+**Flujo de trabajo optimizado:** Los participantes han explorado funcionalidades avanzadas de Git, como el uso de comandos adicionales y las mejores prácticas para optimizar el proceso de desarrollo web. Han descubierto cómo automatizar tareas, aplicar estrategias de ramificación y aprovechar herramientas de integración continua para mejorar la eficiencia y la calidad del trabajo.
+
+**Resultados obtenidos:** El taller ha brindado a los participantes las herramientas y el conocimiento necesarios para aplicar Git de manera efectiva en el desarrollo de proyectos de aplicaciones web. Han fortalecido sus habilidades técnicas y su capacidad para colaborar en equipo, lo que les permitirá impulsar el éxito de futuros proyectos y trabajar de manera más eficiente y efectiva.
