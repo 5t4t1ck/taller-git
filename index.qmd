@@ -184,6 +184,27 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
   });
 ```
 
+## Creación de la clase `Item`:
+
+``` javascript
+const mongoose = require('mongoose');
+
+const itemSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+});
+
+const Item = mongoose.model('Item', itemSchema);
+
+module.exports = Item;
+```
+
 ### Creación de API RESTful:
 
 ``` javascript
@@ -231,10 +252,6 @@ cd proyecto-frontend
 ```
 
 ### Creación de componentes React:
-
-```         
-jsx
-```
 
 ```         
 import React from 'react';  function App() {   return (     <div>       <h1>Hola desde React!</h1>     </div>   ); }  export default App; 
