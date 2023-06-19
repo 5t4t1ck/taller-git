@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.340">
 
   <meta name="author" content="Lcdo. Diego Medardo Saavedra García. Mgtr">
-  <meta name="dcterms.date" content="2023-06-13">
+  <meta name="dcterms.date" content="2023-06-19">
   <title>Taller de Git</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -404,7 +404,7 @@ Lcdo. Diego Medardo Saavedra García. Mgtr
 </div>
 </div>
 
-  <p class="date">2023-06-13</p>
+  <p class="date">2023-06-19</p>
 </section>
 <section class="slide level2">
 
@@ -552,47 +552,65 @@ Lcdo. Diego Medardo Saavedra García. Mgtr
 <span id="cb3-8"><a href="#cb3-8"></a>  <span class="op">.</span><span class="fu">catch</span>((error) <span class="kw">=&gt;</span> {</span>
 <span id="cb3-9"><a href="#cb3-9"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">error</span>(<span class="st">'Error al conectar a la base de datos:'</span><span class="op">,</span> error)<span class="op">;</span></span>
 <span id="cb3-10"><a href="#cb3-10"></a>  })<span class="op">;</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="creación-de-api-restful">Creación de API RESTful:</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">const</span> express <span class="op">=</span> <span class="pp">require</span>(<span class="st">'express'</span>)<span class="op">;</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">const</span> router <span class="op">=</span> express<span class="op">.</span><span class="fu">Router</span>()<span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">const</span> Item <span class="op">=</span> <span class="pp">require</span>(<span class="st">'../models/Item'</span>)<span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">// Obtener todos los items</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>router<span class="op">.</span><span class="fu">get</span>(<span class="st">'/items'</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb4-7"><a href="#cb4-7"></a>  Item<span class="op">.</span><span class="fu">find</span>()</span>
-<span id="cb4-8"><a href="#cb4-8"></a>    <span class="op">.</span><span class="fu">then</span>((items) <span class="kw">=&gt;</span> {</span>
-<span id="cb4-9"><a href="#cb4-9"></a>      res<span class="op">.</span><span class="fu">json</span>(items)<span class="op">;</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>    })</span>
-<span id="cb4-11"><a href="#cb4-11"></a>    <span class="op">.</span><span class="fu">catch</span>((error) <span class="kw">=&gt;</span> {</span>
-<span id="cb4-12"><a href="#cb4-12"></a>      res<span class="op">.</span><span class="fu">status</span>(<span class="dv">500</span>)<span class="op">.</span><span class="fu">json</span>({ <span class="dt">error</span><span class="op">:</span> <span class="st">'Error al obtener los items'</span> })<span class="op">;</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>    })<span class="op">;</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a>})<span class="op">;</span></span>
+</section>
+<section id="creación-de-la-clase-item" class="slide level2">
+<h2>Creación de la clase <code>Item</code>:</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">const</span> mongoose <span class="op">=</span> <span class="pp">require</span>(<span class="st">'mongoose'</span>)<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">const</span> itemSchema <span class="op">=</span> <span class="kw">new</span> mongoose<span class="op">.</span><span class="fu">Schema</span>({</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="dt">name</span><span class="op">:</span> {</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="dt">type</span><span class="op">:</span> <span class="bu">String</span><span class="op">,</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="dt">required</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>  }<span class="op">,</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>  <span class="dt">description</span><span class="op">:</span> {</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    <span class="dt">type</span><span class="op">:</span> <span class="bu">String</span><span class="op">,</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>    <span class="dt">required</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>  }<span class="op">,</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>})<span class="op">;</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="kw">const</span> Item <span class="op">=</span> mongoose<span class="op">.</span><span class="fu">model</span>(<span class="st">'Item'</span><span class="op">,</span> itemSchema)<span class="op">;</span></span>
 <span id="cb4-15"><a href="#cb4-15"></a></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="co">// Crear un nuevo item</span></span>
-<span id="cb4-17"><a href="#cb4-17"></a>router<span class="op">.</span><span class="fu">post</span>(<span class="st">'/items'</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb4-18"><a href="#cb4-18"></a>  <span class="kw">const</span> newItem <span class="op">=</span> <span class="kw">new</span> <span class="fu">Item</span>({</span>
-<span id="cb4-19"><a href="#cb4-19"></a>    <span class="dt">name</span><span class="op">:</span> req<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="at">name</span><span class="op">,</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a>    <span class="dt">description</span><span class="op">:</span> req<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="at">description</span><span class="op">,</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a>  })<span class="op">;</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a></span>
-<span id="cb4-23"><a href="#cb4-23"></a>  newItem<span class="op">.</span><span class="fu">save</span>()</span>
-<span id="cb4-24"><a href="#cb4-24"></a>    <span class="op">.</span><span class="fu">then</span>((item) <span class="kw">=&gt;</span> {</span>
-<span id="cb4-25"><a href="#cb4-25"></a>      res<span class="op">.</span><span class="fu">json</span>(item)<span class="op">;</span></span>
-<span id="cb4-26"><a href="#cb4-26"></a>    })</span>
-<span id="cb4-27"><a href="#cb4-27"></a>    <span class="op">.</span><span class="fu">catch</span>((error) <span class="kw">=&gt;</span> {</span>
-<span id="cb4-28"><a href="#cb4-28"></a>      res<span class="op">.</span><span class="fu">status</span>(<span class="dv">500</span>)<span class="op">.</span><span class="fu">json</span>({ <span class="dt">error</span><span class="op">:</span> <span class="st">'Error al crear el item'</span> })<span class="op">;</span></span>
-<span id="cb4-29"><a href="#cb4-29"></a>    })<span class="op">;</span></span>
-<span id="cb4-30"><a href="#cb4-30"></a>})<span class="op">;</span></span>
-<span id="cb4-31"><a href="#cb4-31"></a></span>
-<span id="cb4-32"><a href="#cb4-32"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> router<span class="op">;</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-16"><a href="#cb4-16"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> Item<span class="op">;</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 id="creación-de-api-restful">Creación de API RESTful:</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">const</span> express <span class="op">=</span> <span class="pp">require</span>(<span class="st">'express'</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">const</span> router <span class="op">=</span> express<span class="op">.</span><span class="fu">Router</span>()<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw">const</span> Item <span class="op">=</span> <span class="pp">require</span>(<span class="st">'../models/Item'</span>)<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">// Obtener todos los items</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>router<span class="op">.</span><span class="fu">get</span>(<span class="st">'/items'</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
+<span id="cb5-7"><a href="#cb5-7"></a>  Item<span class="op">.</span><span class="fu">find</span>()</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    <span class="op">.</span><span class="fu">then</span>((items) <span class="kw">=&gt;</span> {</span>
+<span id="cb5-9"><a href="#cb5-9"></a>      res<span class="op">.</span><span class="fu">json</span>(items)<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>    })</span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="op">.</span><span class="fu">catch</span>((error) <span class="kw">=&gt;</span> {</span>
+<span id="cb5-12"><a href="#cb5-12"></a>      res<span class="op">.</span><span class="fu">status</span>(<span class="dv">500</span>)<span class="op">.</span><span class="fu">json</span>({ <span class="dt">error</span><span class="op">:</span> <span class="st">'Error al obtener los items'</span> })<span class="op">;</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>    })<span class="op">;</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>})<span class="op">;</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="co">// Crear un nuevo item</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a>router<span class="op">.</span><span class="fu">post</span>(<span class="st">'/items'</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
+<span id="cb5-18"><a href="#cb5-18"></a>  <span class="kw">const</span> newItem <span class="op">=</span> <span class="kw">new</span> <span class="fu">Item</span>({</span>
+<span id="cb5-19"><a href="#cb5-19"></a>    <span class="dt">name</span><span class="op">:</span> req<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="at">name</span><span class="op">,</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a>    <span class="dt">description</span><span class="op">:</span> req<span class="op">.</span><span class="at">body</span><span class="op">.</span><span class="at">description</span><span class="op">,</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a>  })<span class="op">;</span></span>
+<span id="cb5-22"><a href="#cb5-22"></a></span>
+<span id="cb5-23"><a href="#cb5-23"></a>  newItem<span class="op">.</span><span class="fu">save</span>()</span>
+<span id="cb5-24"><a href="#cb5-24"></a>    <span class="op">.</span><span class="fu">then</span>((item) <span class="kw">=&gt;</span> {</span>
+<span id="cb5-25"><a href="#cb5-25"></a>      res<span class="op">.</span><span class="fu">json</span>(item)<span class="op">;</span></span>
+<span id="cb5-26"><a href="#cb5-26"></a>    })</span>
+<span id="cb5-27"><a href="#cb5-27"></a>    <span class="op">.</span><span class="fu">catch</span>((error) <span class="kw">=&gt;</span> {</span>
+<span id="cb5-28"><a href="#cb5-28"></a>      res<span class="op">.</span><span class="fu">status</span>(<span class="dv">500</span>)<span class="op">.</span><span class="fu">json</span>({ <span class="dt">error</span><span class="op">:</span> <span class="st">'Error al crear el item'</span> })<span class="op">;</span></span>
+<span id="cb5-29"><a href="#cb5-29"></a>    })<span class="op">;</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a>})<span class="op">;</span></span>
+<span id="cb5-31"><a href="#cb5-31"></a></span>
+<span id="cb5-32"><a href="#cb5-32"></a>module<span class="op">.</span><span class="at">exports</span> <span class="op">=</span> router<span class="op">;</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="implementación-en-frontend-equipo-2" class="slide level2">
 <h2>Implementación en Frontend (equipo 2):</h2>
 <h3 id="configuración-del-entorno-1">Configuración del entorno:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="ex">npx</span> create-react-app proyecto-frontend</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="bu">cd</span> proyecto-frontend</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">npx</span> create-react-app proyecto-frontend</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="bu">cd</span> proyecto-frontend</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <h3 id="creación-de-componentes-react">Creación de componentes React:</h3>
-<pre><code>jsx</code></pre>
 <pre><code>import React from 'react';  function App() {   return (     &lt;div&gt;       &lt;h1&gt;Hola desde React!&lt;/h1&gt;     &lt;/div&gt;   ); }  export default App; </code></pre>
 <h3 id="implementación-de-lógica-y-interacciones">Implementación de lógica y interacciones:</h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource javascriptreact number-lines code-with-copy"><code class="sourceCode javascriptreact"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> React <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
